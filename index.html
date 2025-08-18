@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mening Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'purple-custom': '#8B5CF6',
+                        'yellow-custom': '#FCD34D'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1f2937 0%, #4c1d95 50%, #1f2937 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+        }
+        .typing-animation {
+            border-right: 2px solid #FCD34D;
+            animation: typing 3s steps(20) infinite;
+        }
+        @keyframes typing {
+            0%, 50% { border-color: #FCD34D; }
+            51%, 100% { border-color: transparent; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-black/80 backdrop-blur-md z-50 border-b border-purple-custom/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl sm:text-2xl font-bold text-yellow-custom">Portfolio</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-yellow-custom transition-colors">Bosh sahifa</a>
+                    <a href="#about" class="hover:text-yellow-custom transition-colors">Men haqimda</a>
+                    <a href="#projects" class="hover:text-yellow-custom transition-colors">Loyihalar</a>
+                    <a href="#skills" class="hover:text-yellow-custom transition-colors">Ko'nikmalar</a>
+                    <a href="#contact" class="hover:text-yellow-custom transition-colors">Aloqa</a>
+                </div>
+                <button id="mobile-menu" class="md:hidden text-yellow-custom">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-nav" class="hidden md:hidden mt-4 pb-4 border-t border-purple-custom/20">
+                <div class="flex flex-col space-y-3 pt-4">
+                    <a href="#home" class="hover:text-yellow-custom transition-colors text-center py-2">Bosh sahifa</a>
+                    <a href="#about" class="hover:text-yellow-custom transition-colors text-center py-2">Men haqimda</a>
+                    <a href="#projects" class="hover:text-yellow-custom transition-colors text-center py-2">Loyihalar</a>
+                    <a href="#skills" class="hover:text-yellow-custom transition-colors text-center py-2">Ko'nikmalar</a>
+                    <a href="#contact" class="hover:text-yellow-custom transition-colors text-center py-2">Aloqa</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 sm:top-20 left-5 sm:left-20 w-48 sm:w-72 h-48 sm:h-72 bg-purple-custom rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 sm:bottom-20 right-5 sm:right-20 w-64 sm:w-96 h-64 sm:h-96 bg-yellow-custom rounded-full blur-3xl"></div>
+        </div>
+        <div class="text-center z-10 px-4 sm:px-6">
+            <h1 class="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Salom, men <span class="text-yellow-custom typing-animation block sm:inline">Reyimbayev Behruz</span>
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Fronted yo`nalishi bo`yicha zamonaviy dasturchi
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="scrollToSection('projects')" class="bg-purple-custom hover:bg-purple-700 px-6 sm:px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105 text-sm sm:text-base">
+                    Loyihalarni ko'rish
+                </button>
+                <button onclick="scrollToSection('contact')" class="border-2 border-yellow-custom text-yellow-custom hover:bg-yellow-custom hover:text-black px-6 sm:px-8 py-3 rounded-full font-semibold transition-all text-sm sm:text-base">
+                    Bog'lanish
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 sm:py-20 bg-black">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 text-yellow-custom">Men haqimda</h2>
+            <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="w-60 h-60 sm:w-80 sm:h-80 mx-auto bg-gradient-to-br from-purple-custom to-yellow-custom rounded-full flex items-center justify-center">
+                        <div class="w-52 h-52 sm:w-72 sm:h-72 bg-gray-900 rounded-full flex items-center justify-center">
+                            <svg class="w-20 h-20 sm:w-32 sm:h-32 text-yellow-custom" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7V9C15 10.1 15.9 11 17 11V20C17 21.1 16.1 22 15 22H9C7.9 22 7 21.1 7 20V11C8.1 11 9 10.1 9 9V7H3V9C3 10.1 3.9 11 5 11V20C5 21.1 5.9 22 7 22H17C18.1 22 19 21.1 19 20V11C20.1 11 21 10.1 21 9Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white text-center md:text-left">Junior Dasturchi</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed text-center md:text-left">
+                        Men 1 yillik tajribaga ega Fronted dasturchisiman. 
+                        Zamonaviy texnologiyalar va eng so'nggi trendlardan foydalanib, 
+                        foydalanuvchilar uchun qulay va chiroyli sahifalar yarataman.
+                    </p>
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                        <div class="bg-gray-800 p-3 sm:p-4 rounded-lg border border-purple-custom/20 text-center">
+                            <div class="text-xl sm:text-2xl font-bold text-yellow-custom">10+</div>
+                            <div class="text-xs sm:text-sm text-gray-400">Tugallangan loyihalar</div>
+                        </div>
+                        <div class="bg-gray-800 p-3 sm:p-4 rounded-lg border border-purple-custom/20 text-center">
+                            <div class="text-xl sm:text-2xl font-bold text-yellow-custom">1+</div>
+                            <div class="text-xs sm:text-sm text-gray-400">Yillik tajriba</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-12 sm:py-20 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 text-yellow-custom">Mening loyihalarim</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="card-hover bg-black rounded-xl overflow-hidden border border-purple-custom/20">
+                    <div class="h-40 sm:h-48 bg-gradient-to-br from-purple-custom to-yellow-custom flex items-center justify-center">
+                        <svg class="w-12 h-12 sm:w-16 sm:h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">Omnifood platformasi</h3>
+                        <p class="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base">Zamonaviy onlayn restarant platformasi</p>
+                        <div class="flex flex-wrap gap-2 mb-3 sm:mb-4">
+                            <span class="bg-purple-custom/20 text-purple-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">React</span>
+                            <span class="bg-yellow-custom/20 text-yellow-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">Html</span>
+                        </div>
+                        <button class="w-full bg-purple-custom hover:bg-purple-700 py-2 rounded-lg transition-colors text-sm sm:text-base">
+                            <a href="https://behruz331.github.io/omnifoot/">Ko`rish</a>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-black rounded-xl overflow-hidden border border-purple-custom/20">
+                    <div class="h-40 sm:h-48 bg-gradient-to-br from-yellow-custom to-purple-custom flex items-center justify-center">
+                        <svg class="w-12 h-12 sm:w-16 sm:h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21C5,22.11 5.89,23 7,23H17C18.11,23 19,22.11 19,21V3C19,1.89 18.11,1 17,1Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">Uzum Market sayt</h3>
+                        <p class="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base">Uzum market uchun kichikroq taqlid, bundan ham yaxshi bo`ladi</p>
+                        <div class="flex flex-wrap gap-2 mb-3 sm:mb-4">
+                            <span class="bg-purple-custom/20 text-purple-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">CSS</span>
+                            <span class="bg-yellow-custom/20 text-yellow-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">Html</span>
+                        </div>
+                        <button class="w-full bg-purple-custom hover:bg-purple-700 py-2 rounded-lg transition-colors text-sm sm:text-base">
+                           <a href="https://behruz331.github.io/Uzum-Market/">Ko`rish</a>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-black rounded-xl overflow-hidden border border-purple-custom/20 sm:col-span-2 lg:col-span-1">
+                    <div class="h-40 sm:h-48 bg-gradient-to-br from-purple-custom via-yellow-custom to-purple-custom flex items-center justify-center">
+                        <svg class="w-12 h-12 sm:w-16 sm:h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16,6L18.29,8.29L13.41,13.17L9.41,9.17L2,16.59L3.41,18L9.41,12L13.41,16L19.71,9.71L22,12V6H16Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">Ob-havo ma`lumotlarini ko`ra olish</h3>
+                        <p class="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base">Ma'lumotlar tahlil qilib sizga ko`rsatadi</p>
+                        <div class="flex flex-wrap gap-2 mb-3 sm:mb-4">
+                            <span class="bg-purple-custom/20 text-purple-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">Node.js</span>
+                            <span class="bg-yellow-custom/20 text-yellow-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">Html</span>
+                        </div>
+                        <button class="w-full bg-purple-custom hover:bg-purple-700 py-2 rounded-lg transition-colors text-sm sm:text-base">
+                            <a href="https://behruz331.github.io/Weather-app/">Ko`rish</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-12 sm:py-20 bg-black">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 text-yellow-custom">Ko'nikmalarim</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-gradient-to-br from-purple-custom to-yellow-custom rounded-full flex items-center justify-center">
+                        <span class="text-lg sm:text-2xl font-bold text-white">JS</span>
+                    </div>
+                    <h3 class="text-sm sm:text-xl font-bold mb-2 text-white">JavaScript</h3>
+                    <div class="w-full bg-gray-800 rounded-full h-2">
+                        <div class="bg-yellow-custom h-2 rounded-full" style="width: 60%"></div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-gradient-to-br from-yellow-custom to-purple-custom rounded-full flex items-center justify-center">
+                        <span class="text-lg sm:text-2xl font-bold text-white">R</span>
+                    </div>
+                    <h3 class="text-sm sm:text-xl font-bold mb-2 text-white">React</h3>
+                    <div class="w-full bg-gray-800 rounded-full h-2">
+                        <div class="bg-purple-custom h-2 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-gradient-to-br from-purple-custom to-yellow-custom rounded-full flex items-center justify-center">
+                        <span class="text-lg sm:text-2xl font-bold text-white">HT</span>
+                    </div>
+                    <h3 class="text-sm sm:text-xl font-bold mb-2 text-white">Html</h3>
+                    <div class="w-full bg-gray-800 rounded-full h-2">
+                        <div class="bg-yellow-custom h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-gradient-to-br from-yellow-custom to-purple-custom rounded-full flex items-center justify-center">
+                        <span class="text-lg sm:text-2xl font-bold text-white">CS</span>
+                    </div>
+                    <h3 class="text-sm sm:text-xl font-bold mb-2 text-white">CSS</h3>
+                    <div class="w-full bg-gray-800 rounded-full h-2">
+                        <div class="bg-purple-custom h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 sm:py-20 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 text-yellow-custom">Bog'lanish</h2>
+            <div class="grid md:grid-cols-2 gap-8 sm:gap-12">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white text-center md:text-left">Keling gaplashamiz!</h3>
+                    <p class="text-gray-300 mb-6 sm:mb-8 text-center md:text-left">
+                        Yangi loyiha yoki hamkorlik haqida gaplashishga tayyorman. 
+                        Menga xabar yuboring!
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-center md:justify-start space-x-4">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-purple-custom rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-300 text-sm sm:text-base">reimbayevcomp2@gmail.com</span>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start space-x-4">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-yellow-custom rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-300 text-sm sm:text-base">+998 91 391 17 38</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-black p-4 sm:p-8 rounded-xl border border-purple-custom/20 order-1 md:order-2">
+                    <form class="space-y-4 sm:space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Ismingiz</label>
+                            <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white focus:border-purple-custom focus:outline-none text-sm sm:text-base" placeholder="Ismingizni kiriting">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <input type="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white focus:border-purple-custom focus:outline-none text-sm sm:text-base" placeholder="email@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Xabar</label>
+                            <textarea rows="4" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white focus:border-purple-custom focus:outline-none text-sm sm:text-base" placeholder="Xabaringizni yozing..."></textarea>
+                        </div>
+                        <button type="button" onclick="showMessage()" class="w-full bg-gradient-to-r from-purple-custom to-yellow-custom hover:from-purple-700 hover:to-yellow-500 py-2 sm:py-3 rounded-lg font-semibold text-white transition-all transform hover:scale-105 text-sm sm:text-base">
+                            Xabar yuborish
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-purple-custom/20">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-gray-400">© 2024 Portfolio. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Contact form
+        function showMessage() {
+            alert('Xabar yuborildi! Tez orada javob beraman.');
+        }
+
+        // Navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+                
+                // Close mobile menu after clicking
+                const mobileNav = document.getElementById('mobile-nav');
+                mobileNav.classList.add('hidden');
+            });
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', function() {
+            const sections = ['home', 'about', 'projects', 'skills', 'contact'];
+            const scrollPos = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const element = document.getElementById(section);
+                const navLink = document.querySelector(`nav a[href="#${section}"]`);
+                
+                if (element && navLink) {
+                    const offsetTop = element.offsetTop;
+                    const height = element.offsetHeight;
+                    
+                    if (scrollPos >= offsetTop && scrollPos < offsetTop + height) {
+                        navLink.classList.add('text-yellow-custom');
+                    } else {
+                        navLink.classList.remove('text-yellow-custom');
+                    }
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97090e83a4413595',t:'MTc1NTQzMjUwNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
